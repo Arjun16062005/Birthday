@@ -27,7 +27,21 @@ document.getElementById('openBtn').addEventListener('click', function() {
     }
     type();
 });
+document.getElementById('openBtn').addEventListener('click', function() {
+    // Hide the overlay
+    document.getElementById('overlay').style.display = 'none';
+    
+    // Explicitly play the music
+    const music = document.getElementById('bgMusic');
+    music.play().then(() => {
+        console.log("Music started playing!");
+    }).catch(error => {
+        console.log("Autoplay blocked or error:", error);
+    });
 
+    // Start the typewriter
+    typeMessage(); 
+});
 // This creates a feeling of a journey that never stops
 const startDate = new Date("May 23, 2026").toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 document.getElementById("dateCounter").innerText = `OUR INFINITY JOURNEY BEGAN ON ${startDate.toUpperCase()}`;
