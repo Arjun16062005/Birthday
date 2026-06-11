@@ -1,22 +1,27 @@
 body { margin: 0; background: #000; color: #fff; font-family: 'Playfair Display', serif; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; cursor: none; }
-
 .cursor-follower { position: fixed; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,77,109,0.15), transparent 70%); pointer-events: none; z-index: 999; border-radius: 50%; transform: translate(-50%, -50%); }
-
 .bg-photo-layer { position: absolute; inset: -20px; background: url('photo2.jpg') center/cover no-repeat; filter: blur(25px) brightness(0.3); z-index: 0; transition: transform 0.2s ease-out; }
-
-.overlay { position: fixed; inset: 0; background: #000; z-index: 100; display: flex; justify-content: center; align-items: center; }
-#openBtn { padding: 20px 40px; background: transparent; border: 1px solid #ff4d6d; color: #ff4d6d; cursor: pointer; border-radius: 50px; font-size: 1.2rem; transition: 0.3s; text-transform: uppercase; }
-#openBtn:hover { background: #ff4d6d; color: white; }
-
 .main-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(30px); padding: 50px; border-radius: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1); max-width: 450px; z-index: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.5); animation: floatIn 1.5s ease-out, pulseEffect 3s infinite; }
-
 @keyframes floatIn { 0% { opacity: 0; transform: translateY(50px); } 100% { opacity: 1; transform: translateY(0); } }
 @keyframes pulseEffect { 0%, 100% { box-shadow: 0 10px 30px rgba(255, 77, 109, 0.2); } 50% { box-shadow: 0 20px 60px rgba(255, 77, 109, 0.4); } }
-
 .photo-frame img { width: 180px; height: 180px; border-radius: 50%; border: 3px solid #ff4d6d; object-fit: cover; }
 .counter { font-size: 0.7rem; letter-spacing: 5px; color: #ff4d6d; margin-bottom: 20px; }
-#typewriter { font-size: 1.3rem; line-height: 1.8; color: #fff; min-height: 150px; }
-#signature { font-family: 'Dancing Script', cursive; font-size: 1.5rem; margin-top: 10px; color: #ff4d6d; }
-
+#message-wrapper { min-height: 220px; margin-top: 20px; }
+#typewriter { font-size: 1.3rem; line-height: 1.8; color: #fff; }
+.button-group { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+button { background: transparent; border: 1px solid #ff4d6d; color: #ff4d6d; padding: 10px 20px; border-radius: 50px; cursor: pointer; transition: 0.3s; }
+button:hover { background: #ff4d6d; color: white; }
+.overlay { position: fixed; inset: 0; background: #000; z-index: 100; display: flex; justify-content: center; align-items: center; }
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(10px); }
+.modal-content { background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 30px; max-width: 500px; text-align: center; border: 1px solid #ff4d6d; color: #fff; max-height: 80vh; overflow-y: auto; }
+.close { position: absolute; top: 20px; right: 30px; font-size: 40px; cursor: pointer; color: #ff4d6d; }
+#modalText { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; line-height: 1.8; color: #fff; text-align: justify; }
 .heart { position: absolute; color: #ff4d6d; font-size: 20px; animation: floatUp 6s linear infinite; pointer-events: none; z-index: 2; }
 @keyframes floatUp { 0% { transform: translateY(100vh); opacity: 1; } 100% { transform: translateY(-10vh); opacity: 0; } }
+
+/* WOW Celebration Effects */
+.celebration-overlay { position: fixed; inset: 0; background: radial-gradient(circle, rgba(255,77,109,0.4), rgba(0,0,0,0.9)); z-index: 3000; display: flex; justify-content: center; align-items: center; }
+.wow-message h1 { font-size: 4rem; color: #fff; text-shadow: 0 0 20px #ff4d6d; animation: pulse 1s infinite; }
+.heart-burst { position: absolute; color: #ff4d6d; z-index: 3001; pointer-events: none; animation: popOut 3s forwards; }
+@keyframes popOut { 0% { transform: scale(0); opacity: 1; } 50% { transform: scale(2); opacity: 0.8; } 100% { transform: scale(0); opacity: 0; } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
