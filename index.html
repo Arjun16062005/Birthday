@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Your Birthday</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Dancing+Script&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>Happy Birthday Ammulu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Dancing+Script&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="hearts-container"></div>
     <div class="cursor-follower"></div>
     <div class="bg-photo-layer" id="bgPhoto"></div>
-    
     <audio id="bgMusic" src="life.mpeg" loop></audio>
 
     <div id="overlay" class="overlay">
         <button id="openBtn">For my Life</button>
     </div>
 
-    <div class="main-card" id="card">
-        <div class="counter" id="dateCounter"></div>
-        <div class="photo-frame">
-            <img src="photo.jpeg" alt="You">
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalText"></p>
         </div>
+    </div>
+
+    <div class="main-card" id="card">
+        <div class="counter" id="dateCounter">OUR INFINITY JOURNEY BEGAN ON MAY 23, 2026</div>
+        <div class="photo-frame"><img src="photo.jpeg" alt="You"></div>
         <h1>Happy Birthday Ammulu ❤</h1>
+        
         <div id="message-wrapper">
             <p id="typewriter"></p>
-            <p id="signature"></p>
+        </div>
+
+        <div class="button-group">
+            <button id="secretBtn" onclick="openModal()">Read My Heart 💌</button>
+            <button id="loveBtn" onclick="triggerCelebration()">Celebrate!</button>
         </div>
     </div>
     <script src="script.js"></script>
