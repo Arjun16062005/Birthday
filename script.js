@@ -27,7 +27,7 @@ function closeModal() {
 function triggerCelebration() {
     const overlay = document.createElement("div");
     overlay.className = "celebration-overlay";
-    overlay.innerHTML = `<div class="wow-message"><h1>HAPPY BIRTHDAY AMMULU!</h1></div>`;
+    overlay.innerHTML = `<div class="wow-message"><h1>HAPPY BIRTHDAY DHINA!</h1></div>`;
     document.body.appendChild(overlay);
 
     for(let i=0; i<60; i++) {
